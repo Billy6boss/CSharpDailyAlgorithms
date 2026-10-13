@@ -203,3 +203,15 @@ dotnet test .\CSharpDailyAlgorithms.sln
 參考答案與回顧分別放在 `mentor/Day005MaximumSubarrayReference.cs`、`mentor/Day005Review.md`，刻意不編入 Solution。Day 001 的實際解答覆核放在 `mentor/Day001Review_2026-10-12.md`。
 
 2026-10-13 已將 Day 002～004 的 12 個題目、測試與 mentor 檔案匯入本專案，現在包含 Day 001～005。Day 002～004 沿用下載包的 TODO 練習；既有解答及專案設定均保留。
+
+## Day 006（2026-10-13）：Merge Intervals 合併區間
+
+本題練習 Sorting + Greedy（排序 + 貪婪），合併互相重疊的閉區間，包含相同端點也要合併。必須保留輸入不變，並驗證無效區間。
+
+完整敘述：[Day 006 題目](daily/Day006.md)。請實作 `src/DailyAlgorithms/Day006MergeIntervals.cs` 中的 TODO。準備了 **39 個 xUnit 測試**；尚未完成解答前，測試預期無法全部通過。
+
+```powershell
+dotnet test .\CSharpDailyAlgorithms.sln --filter "FullyQualifiedName~Day006"
+```
+
+題目的參考解答獨立放在 `mentor/Day006MergeIntervalsReference.cs`，不編入 Solution。
