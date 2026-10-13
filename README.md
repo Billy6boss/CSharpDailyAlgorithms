@@ -15,7 +15,7 @@ dotnet test .\CSharpDailyAlgorithms.sln
 
 也可直接執行 `powershell -ExecutionPolicy Bypass -File .\scripts\Run-Tests.ps1`，或在 Rider 的 Unit Tests 視窗執行。
 
-**注意**：第一次還原 xUnit 套件需要可連接 NuGet.org 的網路。提供專案的執行環境沒有安裝 .NET SDK，無法實際跑 `dotnet test`，因此本 ZIP 的執行結果尚未驗證，不應視為「測試已通過」。
+**注意**：第一次還原 xUnit 套件需要可連接 NuGet.org 的網路。原始 ZIP 製作時的環境沒有安裝 .NET SDK，因此當時未驗證執行結果；目前專案的本機驗證記錄請見 [PROGRESS.md](PROGRESS.md)。尚未完成的題目保留 TODO，對應測試會失敗；新增題目檔案不代表測試已通過。
 
 ## Day 001（2026-10-09）：Two Sum 兩數之和
 
@@ -53,11 +53,28 @@ numbers = [1, 2, 3], target = 10      -> []
 ```text
 CSharpDailyAlgorithms.sln
 src/DailyAlgorithms/Day001TwoSum.cs
+src/DailyAlgorithms/Day002ValidParentheses.cs
+src/DailyAlgorithms/Day003BinarySearch.cs
+src/DailyAlgorithms/Day004LongestUniqueSubstring.cs
+src/DailyAlgorithms/Day005MaximumSubarray.cs
 src/DailyAlgorithms/DailyAlgorithms.csproj
 tests/DailyAlgorithms.Tests/Day001TwoSumTests.cs
+tests/DailyAlgorithms.Tests/Day002ValidParenthesesTests.cs
+tests/DailyAlgorithms.Tests/Day003BinarySearchTests.cs
+tests/DailyAlgorithms.Tests/Day004LongestUniqueSubstringTests.cs
+tests/DailyAlgorithms.Tests/Day005MaximumSubarrayTests.cs
 tests/DailyAlgorithms.Tests/DailyAlgorithms.Tests.csproj
 mentor/Day001TwoSumReference.cs
 mentor/Day001Review.md
+mentor/Day001Review_2026-10-12.md
+mentor/Day002ValidParenthesesReference.cs
+mentor/Day002Review.md
+mentor/Day003BinarySearchReference.cs
+mentor/Day003Review.md
+mentor/Day004LongestUniqueSubstringReference.cs
+mentor/Day004Review.md
+mentor/Day005MaximumSubarrayReference.cs
+mentor/Day005Review.md
 PROGRESS.md
 scripts/Run-Tests.ps1
 ```
@@ -65,6 +82,96 @@ scripts/Run-Tests.ps1
 ## 接下來的每日練習
 
 新題目一律沿用這個 Solution，增加 `DayNNN題目.cs` 與相應 xUnit 測試檔。題目檔不包含答案；解出後使用測試驗證，再參考 `mentor/` 的最佳化方向。要評價**你自己的**程式碼，仍需提供實際程式碼與測試輸出。
+
+## Day 002（2026-10-10）：Valid Parentheses 有效括號
+
+**難度：Easy**
+
+給定字串 `brackets`，判斷 `()`、`[]`、`{}` 是否正確配對與巢狀。空字串回傳 `true`；包含任何非括號字元時回傳 `false`；null 擲出 `ArgumentNullException`。
+
+請完成 `src/DailyAlgorithms/Day002ValidParentheses.cs`：
+
+```csharp
+public static bool IsValid(string brackets)
+```
+
+範例：
+
+```text
+"()[]{}" -> true
+"{[()]}" -> true
+"([)]"   -> false
+"(()"    -> false
+""       -> true
+"a"      -> false
+```
+
+**學習目標**：Stack、括號配對、巢狀順序與邊界條件。挑戰目標為 **O(n) 時間、O(n) 最壞額外空間**。
+
+```powershell
+dotnet test .\CSharpDailyAlgorithms.sln --filter "FullyQualifiedName~Day002"
+```
+
+本題包含 **25 個 xUnit 測試**。題目保留 TODO，完成後再參考 `mentor/Day002ValidParenthesesReference.cs` 與 `mentor/Day002Review.md`；mentor 程式不編入 Solution。
+
+## Day 003（2026-10-11）：Binary Search 二分搜尋
+
+**難度：Easy**
+
+給定已依非遞減順序排列的整數陣列 `numbers` 和整數 `target`，回傳目標值**第一次出現**的索引。找不到或陣列為空時回傳 `-1`；null 擲出 `ArgumentNullException`。不得修改輸入陣列。
+
+請完成 `src/DailyAlgorithms/Day003BinarySearch.cs`：
+
+```csharp
+public static int FindFirstIndex(int[] numbers, int target)
+```
+
+範例：
+
+```text
+numbers = [-3, -1, 2, 2, 2, 9], target = 2 -> 2
+numbers = [1, 1, 1], target = 1             -> 0
+numbers = [1, 3, 5], target = 2             -> -1
+numbers = [], target = 1                    -> -1
+```
+
+**學習目標**：二分搜尋、搜尋區間、重複元素與索引邊界。挑戰目標為 **O(log n) 時間、O(1) 額外空間**。
+
+```powershell
+dotnet test .\CSharpDailyAlgorithms.sln --filter "FullyQualifiedName~Day003"
+```
+
+本題包含 **29 個 xUnit 測試**，其中有 250 組固定種子隨機輸入比對。題目保留 TODO，完成後再參考 `mentor/Day003BinarySearchReference.cs` 與 `mentor/Day003Review.md`；mentor 程式不編入 Solution。
+
+## Day 004（2026-10-12）：Longest Substring Without Repeating Characters 最長不重複字元子字串
+
+**難度：Medium**
+
+給定字串 `text`，回傳不含重複 `char` 的最長**連續子字串**長度。空字串回傳 `0`；null 擲出 `ArgumentNullException`；區分大小寫，不做正規化。字元以 C# `char`（UTF-16 code unit）為單位，不按 `Rune` 或文字元素計算。
+
+請完成 `src/DailyAlgorithms/Day004LongestUniqueSubstring.cs`：
+
+```csharp
+public static int LengthOfLongestSubstring(string text)
+```
+
+範例：
+
+```text
+"abcabcbb" -> 3
+"pwwkew"   -> 3
+"abba"     -> 2
+"aA"       -> 2
+""         -> 0
+```
+
+**學習目標**：滑動視窗、`Dictionary<char, int>`、重複字元位置與視窗左界。挑戰目標為 **平均 O(n) 時間、O(min(n, 字元種類數)) 額外空間**。
+
+```powershell
+dotnet test .\CSharpDailyAlgorithms.sln --filter "FullyQualifiedName~Day004"
+```
+
+本題包含 **34 個 xUnit 測試**，其中有 400 組固定種子隨機輸入比對。題目保留 TODO，完成後再參考 `mentor/Day004LongestUniqueSubstringReference.cs` 與 `mentor/Day004Review.md`；mentor 程式不編入 Solution。
 
 ## Day 005（2026-10-12）：Maximum Subarray 最大連續子陣列和
 
@@ -95,4 +202,4 @@ dotnet test .\CSharpDailyAlgorithms.sln
 
 參考答案與回顧分別放在 `mentor/Day005MaximumSubarrayReference.cs`、`mentor/Day005Review.md`，刻意不編入 Solution。Day 001 的實際解答覆核放在 `mentor/Day001Review_2026-10-12.md`。
 
-2026-10-12 檢視本機檔案時，既有專案只有 Day 001；本次依請求直接新增 Day 005，Day 002～004 尚未合併。既有解答及專案設定均保留。
+2026-10-13 已將 Day 002～004 的 12 個題目、測試與 mentor 檔案匯入本專案，現在包含 Day 001～005。Day 002～004 沿用下載包的 TODO 練習；既有解答及專案設定均保留。
