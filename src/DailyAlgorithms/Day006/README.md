@@ -37,4 +37,20 @@ Day006MergeIntervals.Merge([]);              // []
 dotnet test .\CSharpDailyAlgorithms.sln --filter "FullyQualifiedName~Day006" --nologo
 ```
 
-完成後再看 `mentor/Day006MergeIntervalsReference.cs` 和 `mentor/Day006Review.md`。不要將參考答案複製到 TODO。
+---
+
+## 本題檔案
+
+- **C# 練習程式**：[`Day006MergeIntervals.cs`](./Day006MergeIntervals.cs)
+- **xUnit 單元測試**：[Day006MergeIntervalsTests.cs](../../../tests/DailyAlgorithms.Tests/Day006MergeIntervalsTests.cs)
+- **參考解答（請完成後再看）**：[Day006MergeIntervalsReference.cs](../../../mentor/Day006MergeIntervalsReference.cs)
+- **解題檢討**：[Day006Review.md](../../../mentor/Day006Review.md)
+- **進度與測試紀錄**：[PROGRESS.md](../../../PROGRESS.md)
+
+在 **Repository 根目錄** 執行本題測試：
+
+```powershell
+dotnet test .\CSharpDailyAlgorithms.sln --filter "FullyQualifiedName~Day006"
+```
+
+> 練習程式保留你自己的實作或 TODO；參考解答不編入 Solution。未完成 TODO 前的測試失敗屬於預期，請以實際執行結果為準。
