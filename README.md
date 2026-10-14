@@ -24,6 +24,7 @@ dotnet test .\CSharpDailyAlgorithms.sln
 | 2026-10-12 | [Day 004：Longest Unique Substring（最長不重複子字串）](src/DailyAlgorithms/Day004/README.md) | Sliding Window |
 | 2026-10-12 | [Day 005：Maximum Subarray（最大連續子陣列和）](src/DailyAlgorithms/Day005/README.md) | Dynamic Programming |
 | 2026-10-13 | [Day 006：Merge Intervals（合併區間）](src/DailyAlgorithms/Day006/README.md) | Sorting + Greedy |
+| 2026-10-14 | [Day 007：Number of Islands（島嶼數量）](src/DailyAlgorithms/Day007/README.md) | Graph Traversal（BFS / DFS） |
 
 ## 每日資料夾規範
 
@@ -40,6 +41,9 @@ src/DailyAlgorithms/
   Day006/
     README.md
     Day006MergeIntervals.cs
+  Day007/
+    README.md
+    Day007NumberOfIslands.cs
 tests/DailyAlgorithms.Tests/
   Day001TwoSumTests.cs         # 單元測試由獨立 xUnit 專案管理
   ...
