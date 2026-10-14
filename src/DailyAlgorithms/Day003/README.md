@@ -25,7 +25,7 @@ numbers = [], target = 1                    -> -1
 dotnet test .\CSharpDailyAlgorithms.sln --filter "FullyQualifiedName~Day003"
 ```
 
-本題包含 **29 個 xUnit 測試**，其中有 250 組固定種子隨機輸入比對。題目保留 TODO，完成後再參考 `../../../mentor/Day003BinarySearchReference.cs` 與 `../../../mentor/Day003Review.md`；mentor 程式不編入 Solution。
+本題包含 **29 個 xUnit 測試**，其中有 250 組固定種子隨機輸入比對。2026-10-13 使用者實作已通過 29/29 測試；目前為 O(n) 線性搜尋，尚待達成 O(log n) 時間目標。本次實作評價與改進提示請見 [Day003Review_2026-10-13.md](../../../mentor/Day003Review_2026-10-13.md)。參考解答及一般解題回顧分別在 `../../../mentor/Day003BinarySearchReference.cs` 與 `../../../mentor/Day003Review.md`；mentor 程式不編入 Solution。
 
 ---
 
@@ -35,6 +35,7 @@ dotnet test .\CSharpDailyAlgorithms.sln --filter "FullyQualifiedName~Day003"
 - **xUnit 單元測試**：[Day003BinarySearchTests.cs](../../../tests/DailyAlgorithms.Tests/Day003BinarySearchTests.cs)
 - **參考解答（請完成後再看）**：[Day003BinarySearchReference.cs](../../../mentor/Day003BinarySearchReference.cs)
 - **解題檢討**：[Day003Review.md](../../../mentor/Day003Review.md)
+- **本次實作評價（僅提示）**：[Day003Review_2026-10-13.md](../../../mentor/Day003Review_2026-10-13.md)
 - **進度與測試紀錄**：[PROGRESS.md](../../../PROGRESS.md)
 
 在 **Repository 根目錄** 執行本題測試：
