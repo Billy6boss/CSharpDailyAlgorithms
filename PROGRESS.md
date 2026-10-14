@@ -8,6 +8,7 @@
 | 2026-10-12 | 004 | [Longest Unique Substring（最長不重複子字串）](src/DailyAlgorithms/Day004/README.md) | 待作答（TODO） | 1/34 通過、33 失敗（2026-10-13 本機實測） | 完成後評分 |
 | 2026-10-12 | 005 | [Maximum Subarray（最大連續子陣列和）](src/DailyAlgorithms/Day005/README.md) | 待作答（TODO） | 1/39 通過、38 失敗（2026-10-13 本機實測）；參考答案 39/39 通過（先前工作副本） | 完成後評分 |
 | 2026-10-13 | 006 | [Merge Intervals（合併區間）](src/DailyAlgorithms/Day006/README.md) | 待作答（TODO） | 尚未執行 Day 006 的 xUnit 測試；待實測 | 完成後評價 |
+| 2026-10-14 | 007 | [Number of Islands（島嶼數量）](src/DailyAlgorithms/Day007/README.md) | 待作答（TODO） | 尚未執行 dotnet test（目前環境未安裝 .NET SDK） | 完成後評分 |
 
 > 將新題目放在 `src/DailyAlgorithms/DayNNN/`，同一資料夾建立 `README.md` 與 `DayNNN題目.cs`；於 `tests/DailyAlgorithms.Tests/` 新增單元測試。根目錄 README 僅保留索引。
 
