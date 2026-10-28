@@ -9,10 +9,64 @@ public static class Day004LongestUniqueSubstring
     /// 空字串回傳 0；null 擲出 ArgumentNullException。
     /// 目標：平均 O(n) 時間，O(min(n, 字元種類數)) 額外空間。
     /// </summary>
+    /// <remarks>
+    /// "abcabcbb" -> 3
+    //"pwwkew"   -> 3
+    //"pwpkew"   -> 4
+    //"pwawkew"   -> 4
+    //"abba"     -> 2
+    //"aA"       -> 2
+    //""         -> 0
+    /// </remarks>
     public static int LengthOfLongestSubstring(string text)
     {
         ArgumentNullException.ThrowIfNull(text);
-        // TODO: 使用滑動視窗；處理 abba 時左界不能向後退。
-        throw new NotImplementedException("請完成 Day 004：最長不重複字元子字串。");
+        if (text.Length == 0)
+        {
+            return 0;
+        }
+        
+        var noneRepeatChar = new List<char>();
+        var maxLength = 0;
+        var ansStartIndex = 0;
+
+        for (var index = 0; index < text.Length; index++)
+        {
+            var ogChar = text[index];
+            var repeatCharIndex = noneRepeatChar.LastIndexOf(ogChar);
+            if (repeatCharIndex != -1)
+            {
+                ansStartIndex = ansStartIndex > repeatCharIndex + 1 ? ansStartIndex : repeatCharIndex + 1;
+            }
+            
+            var ansEndIndex = index;
+            noneRepeatChar.Add(ogChar);
+
+            maxLength = maxLength < ansEndIndex - ansStartIndex + 1 ? ansEndIndex - ansStartIndex + 1 : maxLength;
+        }
+
+
+        return maxLength;
+        
+        // correct but slow way
+        // ArgumentNullException.ThrowIfNull(text);
+        // var noneRepeatChar = new List<char>();
+        // var maxLength = 0;
+        //
+        // foreach (var ogChar in text)
+        // {
+        //     var repeatCharIndex = noneRepeatChar.IndexOf(ogChar);
+        //     if (noneRepeatChar.Contains(ogChar))
+        //     {
+        //         noneRepeatChar.RemoveRange(0, repeatCharIndex+1);
+        //     }
+        //     
+        //     noneRepeatChar.Add(ogChar);
+        //     
+        //     maxLength = maxLength < noneRepeatChar.Count ? noneRepeatChar.Count : maxLength;
+        // }
+        //
+        //
+        // return maxLength;
     }
 }

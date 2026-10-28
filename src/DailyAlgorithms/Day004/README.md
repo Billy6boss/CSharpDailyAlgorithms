@@ -26,7 +26,7 @@ public static int LengthOfLongestSubstring(string text)
 dotnet test .\CSharpDailyAlgorithms.sln --filter "FullyQualifiedName~Day004"
 ```
 
-本題包含 **34 個 xUnit 測試**，其中有 400 組固定種子隨機輸入比對。題目保留 TODO，完成後再參考 `../../../mentor/Day004LongestUniqueSubstringReference.cs` 與 `../../../mentor/Day004Review.md`；mentor 程式不編入 Solution。
+本題包含 **34 個 xUnit 測試**，其中有 400 組固定種子隨機輸入比對。2026-10-28 最新索引版修正視窗起點後，已通過 **34/34 測試**，未發現結果錯誤；最近位置的查找成本及保存完整字元歷史的空間使用仍可優化。各次實作評價與提示請見 [Day004Review_2026-10-28.md](../../../mentor/Day004Review_2026-10-28.md)。參考解答及一般解題回顧分別在 `../../../mentor/Day004LongestUniqueSubstringReference.cs` 與 `../../../mentor/Day004Review.md`；mentor 程式不編入 Solution。
 
 ---
 
@@ -36,6 +36,7 @@ dotnet test .\CSharpDailyAlgorithms.sln --filter "FullyQualifiedName~Day004"
 - **xUnit 單元測試**：[Day004LongestUniqueSubstringTests.cs](../../../tests/DailyAlgorithms.Tests/Day004LongestUniqueSubstringTests.cs)
 - **參考解答（請完成後再看）**：[Day004LongestUniqueSubstringReference.cs](../../../mentor/Day004LongestUniqueSubstringReference.cs)
 - **解題檢討**：[Day004Review.md](../../../mentor/Day004Review.md)
+- **本次實作評價（僅提示）**：[Day004Review_2026-10-28.md](../../../mentor/Day004Review_2026-10-28.md)
 - **進度與測試紀錄**：[PROGRESS.md](../../../PROGRESS.md)
 
 在 **Repository 根目錄** 執行本題測試：
