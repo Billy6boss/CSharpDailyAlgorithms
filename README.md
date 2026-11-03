@@ -25,6 +25,7 @@ dotnet test .\CSharpDailyAlgorithms.sln
 | 2026-10-12 | [Day 005：Maximum Subarray（最大連續子陣列和）](src/DailyAlgorithms/Day005/README.md) | Dynamic Programming |
 | 2026-10-13 | [Day 006：Merge Intervals（合併區間）](src/DailyAlgorithms/Day006/README.md) | Sorting + Greedy |
 | 2026-10-14 | [Day 007：Number of Islands（島嶼數量）](src/DailyAlgorithms/Day007/README.md) | Graph Traversal（BFS / DFS） |
+| 2026-10-15（10/28 補發） | [Day 008：LRU Cache（最近最少使用快取）](src/DailyAlgorithms/Day008/README.md) | Hash Table + Doubly Linked List |
 
 ## 每日資料夾規範
 
@@ -44,6 +45,9 @@ src/DailyAlgorithms/
   Day007/
     README.md
     Day007NumberOfIslands.cs
+  Day008/
+    README.md
+    Day008LruCache.cs
 tests/DailyAlgorithms.Tests/
   Day001TwoSumTests.cs         # 單元測試由獨立 xUnit 專案管理
   ...
