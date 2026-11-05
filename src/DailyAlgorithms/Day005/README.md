@@ -23,7 +23,7 @@ dotnet test .\CSharpDailyAlgorithms.sln --filter "FullyQualifiedName~Day005"
 dotnet test .\CSharpDailyAlgorithms.sln
 ```
 
-本題包含 **39 個 xUnit 測試**（32 組參數案例與 7 個額外測試），涵蓋邊界、溢位、輸入不變性、重複呼叫、100,000 個元素，以及 1,000 組固定種子隨機輸入對照暴力解法。題目保留 TODO，在完成解答前會有測試失敗。
+本題目前包含 **40 個 xUnit 測試**（33 組參數案例與 7 個額外測試），涵蓋邊界、溢位、輸入不變性、重複呼叫、100,000 個元素，以及 1,000 組固定種子隨機輸入對照暴力解法。2026-11-05 使用者實作已通過 **40/40 測試**，時間 O(n)、額外空間 O(1)，評價 **95/100**。本次實作分析與精修提示請見 [Day005Review_2026-11-05.md](../../../mentor/Day005Review_2026-11-05.md)。
 
 參考答案與回顧分別放在 `../../../mentor/Day005MaximumSubarrayReference.cs`、`../../../mentor/Day005Review.md`，刻意不編入 Solution。Day 001 的實際解答覆核放在 `mentor/Day001Review_2026-10-12.md`。
 
@@ -35,6 +35,7 @@ dotnet test .\CSharpDailyAlgorithms.sln
 - **xUnit 單元測試**：[Day005MaximumSubarrayTests.cs](../../../tests/DailyAlgorithms.Tests/Day005MaximumSubarrayTests.cs)
 - **參考解答（請完成後再看）**：[Day005MaximumSubarrayReference.cs](../../../mentor/Day005MaximumSubarrayReference.cs)
 - **解題檢討**：[Day005Review.md](../../../mentor/Day005Review.md)
+- **本次實作評價**：[Day005Review_2026-11-05.md](../../../mentor/Day005Review_2026-11-05.md)
 - **進度與測試紀錄**：[PROGRESS.md](../../../PROGRESS.md)
 
 在 **Repository 根目錄** 執行本題測試：

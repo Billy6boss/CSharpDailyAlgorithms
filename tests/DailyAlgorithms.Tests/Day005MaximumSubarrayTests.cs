@@ -1,4 +1,5 @@
 using DailyAlgorithms;
+using DailyAlgorithms.Day005;
 using Xunit;
 
 namespace DailyAlgorithms.Tests;
@@ -7,6 +8,7 @@ public sealed class Day005MaximumSubarrayTests
 {
     [Theory]
     [InlineData(new int[] { }, 0L)]
+    [InlineData(new int[] { 5, -10, 6}, 6)]
     [InlineData(new int[] { 1 }, 1L)]
     [InlineData(new int[] { 0 }, 0L)]
     [InlineData(new int[] { -1 }, -1L)]

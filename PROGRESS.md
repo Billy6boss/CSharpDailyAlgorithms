@@ -6,7 +6,7 @@
 | 2026-10-10 | 002 | [Valid Parentheses（有效括號）](src/DailyAlgorithms/Day002/README.md) | 已實作 | 修正後 25/25 通過（2026-10-13 本機實測） | 97/100；詳見 mentor/Day002Review_2026-10-13.md（僅提示） |
 | 2026-10-11 | 003 | [Binary Search（二分搜尋）](src/DailyAlgorithms/Day003/README.md) | 已實作（待優化至 O(log n)） | 29/29 通過（2026-10-13 本機實測） | 80/100；詳見 mentor/Day003Review_2026-10-13.md（僅提示） |
 | 2026-10-12 | 004 | [Longest Unique Substring（最長不重複子字串）](src/DailyAlgorithms/Day004/README.md) | 已實作（查找與空間可優化） | 索引版修正後 34/34 通過（2026-10-28 本機實測） | 初版 88/100；索引版效能待優化，詳見 mentor/Day004Review_2026-10-28.md（僅提示） |
-| 2026-10-12 | 005 | [Maximum Subarray（最大連續子陣列和）](src/DailyAlgorithms/Day005/README.md) | 待作答（TODO） | 1/39 通過、38 失敗（2026-10-13 本機實測）；參考答案 39/39 通過（先前工作副本） | 完成後評分 |
+| 2026-10-12 | 005 | [Maximum Subarray（最大連續子陣列和）](src/DailyAlgorithms/Day005/README.md) | 已實作 | 40/40 通過（2026-11-05 本機實測） | 95/100；詳見 mentor/Day005Review_2026-11-05.md |
 | 2026-10-13 | 006 | [Merge Intervals（合併區間）](src/DailyAlgorithms/Day006/README.md) | 待作答（TODO） | 尚未執行 Day 006 的 xUnit 測試；待實測 | 完成後評價 |
 | 2026-10-14 | 007 | [Number of Islands（島嶼數量）](src/DailyAlgorithms/Day007/README.md) | 待作答（TODO） | 尚未執行 dotnet test（目前環境未安裝 .NET SDK） | 完成後評分 |
 
@@ -25,3 +25,5 @@
 2026-10-28 後續複查：Day 004 使用者優化版為 30/34 通過、4 失敗；本輪以 `abba` 的狀態追蹤給予提示，尚未重新評分。先前 88/100 屬於通過全部測試的初版，解答與測試保持原樣。
 
 2026-10-28 再次複查：Day 004 限制視窗起點不回退後，最新索引版 34/34 測試全部通過，未發現結果錯誤。下一步提示聚焦最近位置的查找成本及保存完整字元歷史的空間使用，本輪未給索引版新的總分；解答與測試保持原樣。
+
+2026-11-05：Day 005 使用者實作覆核完成，40 個 xUnit 測試全部通過（包含 1,000 組固定種子隨機比對），評價 95/100。兩個狀態分別維護目前結尾最佳與歷史最佳，時間 O(n)、額外空間 O(1)，並以 long 處理累加。精修提示記錄於 `mentor/Day005Review_2026-11-05.md`；解答、測試與既有 Git 暫存內容保留原樣。本次只執行 Day 005 測試，其他題目的紀錄沿用各自最近一次驗證。
